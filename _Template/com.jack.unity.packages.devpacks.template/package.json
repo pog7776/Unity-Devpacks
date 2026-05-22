@@ -14,7 +14,7 @@
     "url": "https://jackcooper.dev"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/@pog7776"
   },
   "dependencies": {
     "com.jack.unity.packages.devpacks.{Example}": "0.0.1"
