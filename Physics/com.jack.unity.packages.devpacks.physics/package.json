@@ -1,5 +1,5 @@
 {
-  "name": "com.jack.unity.packages.devpacks.physics",
+  "name": "@pog7776/com.jack.unity.packages.devpacks.physics",
   "displayName": "Physics",
   "description": "Basic Physics",
   "version": "0.0.1",
@@ -16,7 +16,7 @@
     "url": "https://jackcooper.dev"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@pog7776"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {}
 }

@@ -1,5 +1,5 @@
 {
-  "name": "com.jack.unity.packages.devpacks.vehicles",
+  "name": "@pog7776/com.jack.unity.packages.devpacks.vehicles",
   "displayName": "Vehicle Systems",
   "description": "Basic vehicle systems",
   "version": "0.0.1",
@@ -15,7 +15,7 @@
     "url": "https://jackcooper.dev"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@pog7776"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {}
 }

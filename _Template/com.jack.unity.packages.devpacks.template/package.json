@@ -1,5 +1,5 @@
 {
-  "name": "com.jack.unity.packages.devpacks.{DevpackName}",
+  "name": "@pog7776/com.jack.unity.packages.devpacks.{DevpackName}",
   "displayName": "{DevpackName}",
   "description": "{DevpackDescription}",
   "version": "0.0.1",
@@ -14,7 +14,7 @@
     "url": "https://jackcooper.dev"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@pog7776"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "com.jack.unity.packages.devpacks.{Example}": "0.0.1"
