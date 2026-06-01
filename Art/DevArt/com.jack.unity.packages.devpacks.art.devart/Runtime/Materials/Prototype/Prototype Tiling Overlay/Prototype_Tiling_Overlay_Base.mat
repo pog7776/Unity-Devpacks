@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Prototype_Tiling_Overlay_Base
   m_Shader: {fileID: -6465566751694194690, guid: c2ebd5ec6d6eb014d893f296a5dd40fd, type: 3}
-  m_Parent: {fileID: 2100000, guid: c17d345a6276f1f4d8c209d54a759ff2, type: 2}
+  m_Parent: {fileID: 2100000, guid: a3c457585691899459382bb11b67f45a, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
   - _NORMAL_SPACE_OBJECT
