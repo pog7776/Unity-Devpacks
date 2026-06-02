@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.4] - 2026-06-02
+- Scene labels use canvas system
+
 ## [0.0.3] - 2026-06-01
 - Create procedural Tiling Overlay shader and materials.
 - Restructure Prototype material hierarchy.
