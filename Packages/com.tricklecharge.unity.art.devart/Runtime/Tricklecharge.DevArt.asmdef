@@ -1,5 +1,5 @@
 {
-  "name": "TrickleCharge.DevArt.Template",
+  "name": "TrickleCharge.DevArt",
   "rootNamespace": "TrickleCharge.DevArt",
   "references": [],
   "includePlatforms": [],
