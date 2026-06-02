@@ -4,12 +4,12 @@
 
 | Name       | Namespace                                   | Git URL                                                                                                    |
 |------------|---------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Dev Art    | com.tricklecharge.unity.packages.devpacks.art.devart | https://github.com/pog7776/Unity-Devpacks.git?path=/Art/DevArt/com.tricklecharge.unity.packages.devpacks.art.devart |
-| Attributes | com.tricklecharge.unity.packages.devpacks.attributes | https://github.com/pog7776/Unity-Devpacks.git?path=/Attributes/com.tricklecharge.unity.packages.devpacks.attributes |
-| Drone      | com.tricklecharge.unity.packages.devpacks.drone      | https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.packages.devpacks.drone           |
-| Math       | com.tricklecharge.unity.packages.devpacks.math       | https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.packages.devpacks.math            |
-| Physics    | com.tricklecharge.unity.packages.devpacks.physics    | https://github.com/pog7776/Unity-Devpacks.git?path=/Physics/com.tricklecharge.unity.packages.devpacks.physics       |
-| Vehicles   | com.tricklecharge.unity.packages.devpacks.vehicles   | https://github.com/pog7776/Unity-Devpacks.git?path=/Vehicles/com.tricklecharge.unity.packages.devpacks.vehicles     |
+| Dev Art    | com.tricklecharge.unity.art.devart | https://github.com/pog7776/Unity-Devpacks.git?path=/Art/DevArt/com.tricklecharge.unity.art.devart |
+| Attributes | com.tricklecharge.unity.attributes | https://github.com/pog7776/Unity-Devpacks.git?path=/Attributes/com.tricklecharge.unity.attributes |
+| Drone      | com.tricklecharge.unity.drone      | https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.drone           |
+| Math       | com.tricklecharge.unity.math       | https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.math            |
+| Physics    | com.tricklecharge.unity.physics    | https://github.com/pog7776/Unity-Devpacks.git?path=/Physics/com.tricklecharge.unity.physics       |
+| Vehicles   | com.tricklecharge.unity.vehicles   | https://github.com/pog7776/Unity-Devpacks.git?path=/Vehicles/com.tricklecharge.unity.vehicles     |
 
 ## Usage
 
@@ -22,12 +22,12 @@ Unity seems to be a bit uncooperative with Github packages.
 ```
 {
     "dependencies": {
-        "com.tricklecharge.unity.packages.devpacks.art.devart": "https://github.com/pog7776/Unity-Devpacks.git?path=/Art/DevArt/com.tricklecharge.unity.packages.devpacks.art.devart",
-        "com.tricklecharge.unity.packages.devpacks.attributes": "https://github.com/pog7776/Unity-Devpacks.git?path=/Attributes/com.tricklecharge.unity.packages.devpacks.attributes",
-        "com.tricklecharge.unity.packages.devpacks.drone": "https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.packages.devpacks.drone",
-        "com.tricklecharge.unity.packages.devpacks.math": "https://github.com/pog7776/Unity-Devpacks.git?path=/Math/com.tricklecharge.unity.packages.devpacks.math",
-        "com.tricklecharge.unity.packages.devpacks.physics": "https://github.com/pog7776/Unity-Devpacks.git?path=/Physics/com.tricklecharge.unity.packages.devpacks.physics",
-        "com.tricklecharge.unity.packages.devpacks.vehicles": "https://github.com/pog7776/Unity-Devpacks.git?path=/Vehicles/com.tricklecharge.unity.packages.devpacks.vehicles",
+        "com.tricklecharge.unity.art.devart": "https://github.com/pog7776/Unity-Devpacks.git?path=/Art/DevArt/com.tricklecharge.unity.art.devart",
+        "com.tricklecharge.unity.attributes": "https://github.com/pog7776/Unity-Devpacks.git?path=/Attributes/com.tricklecharge.unity.attributes",
+        "com.tricklecharge.unity.drone": "https://github.com/pog7776/Unity-Devpacks.git?path=/Drone/com.tricklecharge.unity.drone",
+        "com.tricklecharge.unity.math": "https://github.com/pog7776/Unity-Devpacks.git?path=/Math/com.tricklecharge.unity.math",
+        "com.tricklecharge.unity.physics": "https://github.com/pog7776/Unity-Devpacks.git?path=/Physics/com.tricklecharge.unity.physics",
+        "com.tricklecharge.unity.vehicles": "https://github.com/pog7776/Unity-Devpacks.git?path=/Vehicles/com.tricklecharge.unity.vehicles",
     },
 
     "scopedRegistries": [
@@ -51,12 +51,12 @@ Unity seems to be a bit uncooperative with Github packages.
 ```
 {
     "dependencies": {
-        "com.tricklecharge.unity.packages.devpacks.art.devart": "file:S:/Dev/Unity/Devpacks/Art/DevArt/com.tricklecharge.unity.packages.devpacks.art.devart",
-        "com.tricklecharge.unity.packages.devpacks.attributes": "file:S:/Dev/Unity/Devpacks/Attributes/com.tricklecharge.unity.packages.devpacks.attributes",
-        "com.tricklecharge.unity.packages.devpacks.drone": "file:S:/Dev/Unity/Devpacks/Drone/com.tricklecharge.unity.packages.devpacks.drone",
-        "com.tricklecharge.unity.packages.devpacks.math": "file:S:/Dev/Unity/Devpacks/Math/com.tricklecharge.unity.packages.devpacks.math",
-        "com.tricklecharge.unity.packages.devpacks.physics": "file:S:/Dev/Unity/Devpacks/Physics/com.tricklecharge.unity.packages.devpacks.physics",
-        "com.tricklecharge.unity.packages.devpacks.vehicles": "file:S:/Dev/Unity/Devpacks/Vehicles/com.tricklecharge.unity.packages.devpacks.vehicles",
+        "com.tricklecharge.unity.art.devart": "file:S:/Dev/Unity/Devpacks/Art/DevArt/com.tricklecharge.unity.art.devart",
+        "com.tricklecharge.unity.attributes": "file:S:/Dev/Unity/Devpacks/Attributes/com.tricklecharge.unity.attributes",
+        "com.tricklecharge.unity.drone": "file:S:/Dev/Unity/Devpacks/Drone/com.tricklecharge.unity.drone",
+        "com.tricklecharge.unity.math": "file:S:/Dev/Unity/Devpacks/Math/com.tricklecharge.unity.math",
+        "com.tricklecharge.unity.physics": "file:S:/Dev/Unity/Devpacks/Physics/com.tricklecharge.unity.physics",
+        "com.tricklecharge.unity.vehicles": "file:S:/Dev/Unity/Devpacks/Vehicles/com.tricklecharge.unity.vehicles",
     }
 }
 ```
