@@ -15,6 +15,8 @@
 
 Unity seems to be a bit uncooperative with Github packages.
 
+I'm working on setting up a proper package registry.
+
 ### Example `manifest.json`
 
 #### Github packages
