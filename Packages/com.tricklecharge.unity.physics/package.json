@@ -1,6 +1,6 @@
 {
   "name": "com.tricklecharge.unity.physics",
-  "displayName": "Physics",
+  "displayName": "TrickleCharge Physics",
   "description": "Basic Physics",
   "version": "0.0.2",
   "unity": "6000.3",
