@@ -23,9 +23,9 @@ jobs:
           # Creates a shortcut so Unity sees 'Packages' inside '.github/UnityHost'
           ln -s $GITHUB_WORKSPACE/Packages $GITHUB_WORKSPACE/.github/UnityHost/Packages
           
-          # Optional: generate the manifest.json if you don't want to commit an empty one
-          if [ ! -f .github/UnityHost/Packages/manifest.json ]; then
-            echo '{"dependencies": {}}' > .github/UnityHost/Packages/manifest.json
+          # Generate the manifest.json if one doesn't exist
+          if [ ! -f Packages/manifest.json ]; then
+            echo '{"dependencies": {}}' > Packages/manifest.json
           fi
 
       - name: Cache Library folder
