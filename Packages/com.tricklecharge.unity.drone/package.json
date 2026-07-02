@@ -19,6 +19,7 @@
     "registry": "https://npm.pkg.github.com/@pog7776"
   },
   "dependencies": {
+    "com.unity.inputsystem": "1.18.0",
     "com.tricklecharge.unity.attributes": "0.0.1",
     "com.tricklecharge.unity.math": "0.0.1",
     "com.tricklecharge.unity.physics": "0.0.1",

@@ -33,7 +33,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: .
-          # We don't need 'allowDirtyBuild' anymore because the repo is perfectly clean
           customParameters: -batchmode -nographics -executeMethod MultiPackageExporter.ExportAllPackages -quit
 
       - name: Upload Generated Packages
