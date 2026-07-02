@@ -33,7 +33,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: .
-          customParameters: -executeMethod MultiPackageExporter.ExportAllPackages -quit
+          buildMethod: MultiPackageExporter.ExportAllPackages
 
       - name: Upload Generated Packages
         uses: actions/upload-artifact@v4
