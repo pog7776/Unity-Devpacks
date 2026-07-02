@@ -58,7 +58,7 @@ jobs:
             exit 0
           fi
           
-          for tgz in signed-dist/*.tgz; do
+          for tgz in ./signed-dist/*.tgz; do
             echo "Publishing archive: $tgz"
             npm publish "$tgz" --registry https://npm.tricklecharge.dev:8443 || echo "Notice: Skipping duplicate version."
           done
