@@ -1,0 +1,40 @@
+name: Publish to Private Registry
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual force-publishing if needed
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Authenticate and Publish Packages
+        shell: bash
+        run: |
+          # 1. Inject your private registry authToken securely into the runner's global npm profile
+          echo "//npm.tricklecharge.dev:8443/:_authToken=\${NODE_AUTH_TOKEN}" > ~/.npmrc
+          
+          # 2. Iterate through all custom package directories
+          for dir in Packages/com.tricklecharge.*/; do
+            if [ -f "${dir}package.json" ]; then
+              pkg_name=$(basename "$dir")
+              echo "Processing package: $pkg_name"
+          
+              # 3. Publish to Verdaccio. 
+              # The "|| true" ensures if one package version hasn't been bumped, 
+              # the script logs it but continues publishing the other packages.
+              npm publish "$dir" --registry https://npm.tricklecharge.dev:8443 || echo "Notice: Skipping $pkg_name. Version might already exist on the server."
+            fi
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

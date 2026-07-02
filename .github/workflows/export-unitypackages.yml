@@ -1,10 +1,8 @@
-name: Build and Release
+name: Legacy UnityPackage Backup
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  # Removed the push trigger to disable automatic runs
+  workflow_dispatch: # Allows manual execution only
 
 jobs:
   build:
@@ -35,47 +33,5 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: TrickleCharge-UnityPackages
+          name: TrickleCharge-LegacyPackages
           path: build/*.unitypackage
-
-  # JOB 2: Release each package individually
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: TrickleCharge-UnityPackages
-          path: build/
-
-      - name: Publish Individual Releases
-        shell: bash
-        run: |
-          for file in build/*.unitypackage; do
-            # Extract package name (e.g., 'com.tricklecharge.unity.art')
-            pkg_name=$(basename "$file" .unitypackage)
-          
-            # Find the corresponding package.json file
-            # This assumes your structure: Packages/<pkg_name>/package.json
-            pkg_json="Packages/$pkg_name/package.json"
-          
-            if [ -f "$pkg_json" ]; then
-              # Extract version using jq
-              version=$(jq -r .version "$pkg_json")
-              tag="${pkg_name}-v${version}"
-          
-              echo "Creating release for $pkg_name version $version..."
-          
-              gh release create "$tag" "$file" --title "Release $tag" --generate-notes
-            else
-              echo "Warning: package.json not found for $pkg_name at $pkg_json"
-            fi
-          done
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
