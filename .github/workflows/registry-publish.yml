@@ -1,4 +1,4 @@
-name: Publish Third-Party Packages
+name: Publish to Private Registry
 
 on:
   push:
@@ -7,6 +7,6 @@ on:
 
 jobs:
   trigger-shared-pipeline:
-    uses: Trickle-Charge/TrickleCharge-Infra/.github/workflows/shared-registry-publish.yml@main
+    uses: Trickle-Charge/TrickleCharge-Infra/.github/workflows/registry-publish.yml@main
 
     secrets: inherit
