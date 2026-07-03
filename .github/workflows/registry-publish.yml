@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'Packages/**' # Triggers ONLY if files inside the Packages folder are modified
   workflow_dispatch:
 
 jobs:
@@ -28,7 +30,7 @@ jobs:
         run: |
           echo "//npm.tricklecharge.dev/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
 
-      # STEP 2: Compile, Sign, and Gather Artifacts
+      # STEP 2: Pre-check Registry and Gather Artifacts Only for New Versions
       - name: Pack and Sign UPM Packages
         env:
           UPM_SERVICE_ACCOUNT_KEY_ID: ${{ secrets.UPM_SERVICE_ACCOUNT_KEY_ID }}
@@ -40,25 +42,48 @@ jobs:
           
           for dir in Packages/com.tricklecharge.*/; do
             if [ -f "${dir}package.json" ]; then
-              pkg_name=$(basename "$dir")
-              echo "Signing package: $pkg_name"
+              pkg_folder=$(basename "$dir")
           
+              # Extract actual name and version from package.json using jq
+              pkg_id=$(jq -r .name "${dir}package.json")
+              pkg_version=$(jq -r .version "${dir}package.json")
+          
+              echo "Checking registry for $pkg_id@$pkg_version..."
+          
+              # Query Verdaccio to see if this specific version already exists
+              REMOTE_VERSION=$(npm view "${pkg_id}@${pkg_version}" version --registry https://npm.tricklecharge.dev 2>/dev/null || echo "")
+          
+              if [ "$REMOTE_VERSION" = "$pkg_version" ]; then
+                echo "--> $pkg_id@$pkg_version is already live. Skipping."
+                continue
+              fi
+          
+              echo "--> New version detected! Signing and packing: $pkg_folder ($pkg_id@$pkg_version)"
               upm pack "$dir" \
                 --organization-id ${{ secrets.UNITY_ORG_ID }} \
                 --destination ./signed-dist
             fi
           done
 
-      # STEP 3: Deploy Final Tarballs to Verdaccio
+      # STEP 3: Deploy Final Tarballs to Verdaccio (With Proper Error Catching)
       - name: Publish Packages to Verdaccio
         shell: bash
         run: |
           if [ -z "$(ls -A signed-dist/*.tgz 2>/dev/null)" ]; then
-            echo "No signed tarballs found to deploy."
+            echo "No new signed tarballs found to deploy. Pipeline up to date!"
             exit 0
           fi
           
+          FAILED=0
           for tgz in ./signed-dist/*.tgz; do
             echo "Publishing archive: $tgz"
-            npm publish "$tgz" --registry https://npm.tricklecharge.dev || echo "Notice: Skipping duplicate version."
+            if ! npm publish "$tgz" --registry https://npm.tricklecharge.dev; then
+              echo "Error: Failed to publish $tgz"
+              FAILED=1
+            fi
           done
+          
+          if [ $FAILED -ne 0 ]; then
+            echo "One or more package uploads failed."
+            exit 1
+          fi
