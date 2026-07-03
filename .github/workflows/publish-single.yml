@@ -1,0 +1,87 @@
+name: Publish Single Package to Private Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_name:
+        description: 'The package folder name under Packages/ (e.g., com.tricklecharge.core)'
+        required: true
+        type: string
+      force_publish:
+        description: 'Bypass version check (Force publish even if version already exists)'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  publish-single:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Unity UPM CLI
+        run: |
+          curl -fsSL https://cdn.packages.unity.com/upm-cli/install.sh | bash
+          echo "$HOME/.upm/bin" >> $GITHUB_PATH
+
+      # STEP 1: Separate Authentication Identity Layer
+      - name: Authenticate Registry
+        run: |
+          echo "//npm.tricklecharge.dev/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
+
+      # STEP 2: Validate Package, Version Check, and Pack/Sign
+      - name: Pack and Sign Selected Package
+        env:
+          UPM_SERVICE_ACCOUNT_KEY_ID: ${{ secrets.UPM_SERVICE_ACCOUNT_KEY_ID }}
+          UPM_SERVICE_ACCOUNT_KEY_SECRET: ${{ secrets.UPM_SERVICE_ACCOUNT_KEY_SECRET }}
+        shell: bash
+        run: |
+          TARGET_DIR="Packages/${{ inputs.package_name }}"
+          
+          # Strip any trailing slash if provided by the user manually
+          TARGET_DIR="${TARGET_DIR%/}"
+          
+          # Verify folder exists to catch typos early
+          if [ ! -d "$TARGET_DIR" ]; then
+            echo "::error::Directory '$TARGET_DIR' does not exist. Please double-check your folder name spelling."
+            exit 1
+          fi
+          
+          if [ ! -f "${TARGET_DIR}/package.json" ]; then
+            echo "::error::package.json not found inside '$TARGET_DIR'."
+            exit 1
+          fi
+          
+          # Extract identity names dynamically via jq
+          pkg_id=$(jq -r .name "${TARGET_DIR}/package.json")
+          pkg_version=$(jq -r .version "${TARGET_DIR}/package.json")
+          
+          echo "Selected package: $pkg_id"
+          echo "Target local version: $pkg_version"
+          
+          mkdir -p signed-dist
+          
+          # Dynamic conditional check evaluation
+          if [ "${{ inputs.force_publish }}" = "true" ]; then
+            echo "⚠️ 'Force publish' input checked. Bypassing Verdaccio version check..."
+          else
+            echo "Checking remote registry version consistency..."
+            REMOTE_VERSION=$(npm view "${pkg_id}@${pkg_version}" version --registry https://npm.tricklecharge.dev 2>/dev/null || echo "")
+          
+            if [ "$REMOTE_VERSION" = "$pkg_version" ]; then
+              echo "::error::Version $pkg_version of '$pkg_id' is already live in your private registry!"
+              echo "Please increment your package.json version value or check 'Bypass version check' to force upload."
+              exit 1
+            fi
+            echo "✅ Version validation clean. Proceeding to compilation."
+          fi
+          
+          # Execute the UPM CLI packaging execution layer
+          upm pack "$TARGET_DIR" \
+            --organization
