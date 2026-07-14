@@ -2,15 +2,15 @@
 
 ## Index
 
-| Name                                                                                                                                  | Package                                                                                                             | Version                                                                                                                                 |
-|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| [TrickleCharge Art](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.art)                  | [com.tricklecharge.unity.art](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.art)               | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.art?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)        |
-| [TrickleCharge DevArt](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.art.devart)        | [com.tricklecharge.unity.art.devart](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.art.devart) | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.art.devart?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443) |
-| [TrickleCharge Attributes](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.attributes)    | [com.tricklecharge.unity.attributes](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.attributes) | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.attributes?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443) |
-| [TrickleCharge Drones](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.drone)             | [com.tricklecharge.unity.drone](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.drone)           | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.drone?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)      |
-| [TrickleCharge Math](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.math)                | [com.tricklecharge.unity.math](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.math)             | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.math?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)       |
-| [TrickleCharge Physics](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.physics)          | [com.tricklecharge.unity.physics](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.physics)       | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.physics?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)    |
-| [TrickleCharge Vehicle Systems](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.vehicles) | [com.tricklecharge.unity.vehicles](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.vehicles)     | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.vehicles?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)   |
+| Name                                                                                                                                  | Package                                                                                                                        | Version                                                                                                                                      |
+|---------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| [TrickleCharge Art](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.art.core)             | [com.tricklecharge.unity.art.core](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.art.core)                | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.art.core?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)        |
+| [TrickleCharge DevArt](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.art.core.devart)   | [com.tricklecharge.unity.art.core.devart](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.art.core.devart)  | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.art.core.devart?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443) |
+| [TrickleCharge Attributes](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.attributes)    | [com.tricklecharge.unity.attributes](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.attributes)            | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.attributes?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)      |
+| [TrickleCharge Drones](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.drone)             | [com.tricklecharge.unity.drone](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.drone)                      | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.drone?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)           |
+| [TrickleCharge Math](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.math)                | [com.tricklecharge.unity.math](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.math)                        | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.math?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)            |
+| [TrickleCharge Physics](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.physics)          | [com.tricklecharge.unity.physics](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.physics)                  | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.physics?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)         |
+| [TrickleCharge Vehicle Systems](https://github.com/Trickle-Charge/packages-unity/tree/main/Packages/com.tricklecharge.unity.vehicles) | [com.tricklecharge.unity.vehicles](https://npm.tricklecharge.dev/-/web/detail/com.tricklecharge.unity.vehicles)                | ![NPM Version](https://img.shields.io/npm/v/com.tricklecharge.unity.vehicles?registry_uri=https%3A%2F%2Fnpm.tricklecharge.dev%3A8443)        |
 
 ---
 
@@ -38,8 +38,8 @@ or via the Unity project settings:
 ```
 {
     "dependencies": {
-        "com.tricklecharge.unity.art": "0.0.1",
-        "com.tricklecharge.unity.art.devart": "0.0.5",
+        "com.tricklecharge.unity.art.core": "0.0.1",
+        "com.tricklecharge.unity.art.core.devart": "0.0.5",
         "com.tricklecharge.unity.attributes": "0.0.1",
         "com.tricklecharge.unity.drone": "0.0.2",
         "com.tricklecharge.unity.math": "0.0.2",
@@ -65,8 +65,8 @@ You can also clone the repo and add the packages directly:
 ```
 {
     "dependencies": {
-        "com.tricklecharge.unity.art": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.art",
-        "com.tricklecharge.unity.art.devart": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.art.devart",
+        "com.tricklecharge.unity.art.core": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.art.core",
+        "com.tricklecharge.unity.art.core.devart": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.art.core.devart",
         "com.tricklecharge.unity.attributes": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.attributes",
         "com.tricklecharge.unity.drone": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.drone",
         "com.tricklecharge.unity.math": "file:S:/Dev/Unity/Devpacks/Packages/com.tricklecharge.unity.math",

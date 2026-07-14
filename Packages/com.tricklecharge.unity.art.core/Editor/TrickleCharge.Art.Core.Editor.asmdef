@@ -1,6 +1,6 @@
 {
-  "name": "TrickleCharge.Art.Editor",
-  "rootNamespace": "TrickleCharge.Art.Editor",
+  "name": "TrickleCharge.Art.Core.Editor",
+  "rootNamespace": "TrickleCharge.Art.Core.Editor",
   "references": [],
   "includePlatforms": [
     "Editor"

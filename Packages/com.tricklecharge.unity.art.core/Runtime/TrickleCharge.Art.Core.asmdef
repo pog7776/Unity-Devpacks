@@ -1,6 +1,6 @@
 {
-  "name": "TrickleCharge.Art",
-  "rootNamespace": "TrickleCharge.Art",
+  "name": "TrickleCharge.Art.Core",
+  "rootNamespace": "TrickleCharge.Art.Core",
   "references": [],
   "includePlatforms": [],
   "excludePlatforms": [],

@@ -1,5 +1,5 @@
 {
-  "name": "com.tricklecharge.unity.art",
+  "name": "com.tricklecharge.unity.art.core",
   "displayName": "TrickleCharge Art",
   "description": "Assets related to game art.",
   "version": "0.0.1",
